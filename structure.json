@@ -1,0 +1,170 @@
+[
+  {
+    "index": 1,
+    "text_before": "Rubik\u2019s Cube Solving Guide\nThe Dictators\nThe following document is a detailed guide for solving a 3x3x3 Rubik\u2019s cube using a beginner algorithm not optimized for speed, but rather straightforwardness. It details every step, including both moves in standard cube notation and visual aids that show the moves in question.\nIn this document, \u201ctiles\u201d refers to the 9 colored squares on each face of the cube (sometimes referred to as \u201cstickers\u201d), while \u201cpieces\u201d refers to the cubic pieces that the tiles rest on (sometimes referred to as \u201ccubies\u201d). \u201cCorner\u201d tiles/pieces are on the corners of the face/cube, and \u201cedge\u201d tiles/pieces rest in between two corner tiles/pieces. When a \u201cpiece\u201d is referred to by a color (ex: \u201cthe white edge piece\u201d), that is referring to a piece that has that color tile on it (so an edge piece that has a white tile on one of its sides). The center tile that rests on each face is used to determine what that face\u2019s \u201cproper color\u201d should be i.e. a face that has a yellow center tile should be referred to as the \u201cyellow face,\u201d regardless of what the surrounding tiles consist of, with a full face of yellow tiles referred to as a \u201csolved yellow face\u201d.\nThe standard cube notation for 90\u00b0 clockwise rotations (relative to the face) is the following:\nL is for the Left face.\nR is for the Right face.\nU is for the Up face.\nD is for the Down face.\nF is for the Front face.\nB is for the Back face.\nM is for the Middle layer (between L and R), with clockwise rotation following the direction of L.\nE is for the Equator layer (between D and U), with clockwise rotation following the direction of D.\nS is for the Standing layer (between F and B), with clockwise rotation following the direction of F.\nFor counterclockwise rotations, add an apostrophe to the layer being rotated i.e. U\u2019 for a 90\u00b0 counterclockwise rotation of the Up face. Additionally, if a layer is to be rotated twice, it is denoted with a \u201c2\u201d i.e. F2 for rotating the front face twice (direction doesn\u2019t matter for double rotations as the result will be the same).\nStep 1: The Daisy\nIn preparation for the next step (the white cross) a \u201cdaisy\u201d is first formed by moving all white edge tiles to be adjacent to the yellow center tile. There is no particular set of moves for this step, just be mindful that when moving a white tile, you aren\u2019t accidentally moving another white tile that is already in place. The color of the corner tiles does not matter for this step.",
+    "gif": "01.gif",
+    "original": "media/image1.gif",
+    "size_mb": 29.1
+  },
+  {
+    "index": 2,
+    "text_before": "Step 2: The White Cross\nOnce you have all the white tiles on the yellow face, the next step is to look at the other color on the white edge pieces and line them up with its corresponding color on the side faces. Do this by rotating the top layer until that side tile matches the color of the center tile on a side face. Once that\u2019s done, rotate that side face twice.",
+    "gif": "02.gif",
+    "original": "media/image2.gif",
+    "size_mb": 30.3
+  },
+  {
+    "index": 3,
+    "text_before": "If you have done this step properly you should end up with a \u201cwhite cross\u201d with the white center tile having four white edge tiles adjacent to it; and with the other colors of the white edge pieces matching the center tile color of each side face. The color of the corner tiles does not matter for this step.",
+    "gif": "03.gif",
+    "original": "media/image3.gif",
+    "size_mb": 9.2
+  },
+  {
+    "index": 4,
+    "text_before": "Step 3: Solving the First Layer\nAfter making the white cross, reorient the cube to put the white face on the bottom. The next step is to insert the white corner pieces in the correct spot, thereby solving both the white face and the first layer of the cube.\nTo do this, find a white tile on the top row of the side faces (remember that the white face should be on the bottom now), and look at the adjacent side tile on this corner piece. Rotate the top layer until this other side tile\u2019s color matches a side face\u2019s center tile. While looking at this side face, perform an insertion algorithm to move the corner piece into place: If the corner piece is on the right side, do R U R\u2019; if the corner piece is on the left side, do L\u2019 U\u2019 L.",
+    "gif": "04.gif",
+    "original": "media/image4.gif",
+    "size_mb": 19.9
+  },
+  {
+    "index": 5,
+    "text_before": "If there are no white tiles on the top row, but you instead see one on the bottom row, move it to the top row with the following moves: If the white tile is on the right side, do R U\u2019 R\u2019; if the white tile is on the left side, do L\u2019 U L. Once moved, you may resume with the previously stated insertion algorithm.",
+    "gif": "05.gif",
+    "original": "media/image5.gif",
+    "size_mb": 8.6
+  },
+  {
+    "index": 6,
+    "text_before": "If the white tile is on the top face, first rotate the top layer until the white tile is above a non-white corner of the white face (this is to prevent messing up the previously inserted corner pieces). Once that is done, perform the following moves to move the white tile to the top row: if the white corner piece is on the right side, do R U2 R\u2019; if the white corner is on the left side, do L\u2019 U2 L. Once moved, you may resume with the previously stated insertion algorithm.",
+    "gif": "06.gif",
+    "original": "media/image6.gif",
+    "size_mb": 16.6
+  },
+  {
+    "index": 7,
+    "text_before": "After properly inserting all four white corner pieces, you should end up with both a solved white face and a solved first layer.",
+    "gif": "07.gif",
+    "original": "media/image7.gif",
+    "size_mb": 13.2
+  },
+  {
+    "index": 8,
+    "text_before": "Step 4: Solving the Second Layer\nWith the first layer solved, it is now time to solve the second layer of the cube by properly inserting all non-yellow edge pieces (as the yellow face is the top face). First find an edge piece in the top layer of the cube (if you cannot find any, don\u2019t worry that just means that your edge pieces are in the second layer but are mismatched, keep reading to see how to deal with such a situation). Once found, look at the side tile\u2019s color, line it up with the corresponding side face.\nIf the top tile on the edge piece matches the right side\u2019s color, perform the right-side version of the edge piece insertion algorithm: U R U\u2019 R\u2019 U\u2019 F\u2019 U F. Notice how you are first moving the corner piece next to the edge piece, then moving the pieces out of the way so that they can by re-inserted with the front face rotations.",
+    "gif": "08.gif",
+    "original": "media/image8.gif",
+    "size_mb": 34.6
+  },
+  {
+    "index": 9,
+    "text_before": "If the top tile on the edge piece matches the left side\u2019s color, perform the left-side version of the edge piece insertion algorithm: U\u2019 L\u2019 U L U F U\u2019 F\u2019.",
+    "gif": "09.gif",
+    "original": "media/image9.gif",
+    "size_mb": 36.4
+  },
+  {
+    "index": 10,
+    "text_before": "If there are no remaining edge pieces in the top layer that do not have a yellow tile, but the second layer is not properly solved i.e. there are second row tiles that do not match the center tile, then you must have an edge piece mismatch. To fix this, find an edge piece that is not in its correct place/orientation in the second layer and \u201cboot\u201d it by inserting any other edge piece into its place. Use the proper left/right variation of the insertion algorithm. With this mismatched edge piece back in the top layer, you can now re-insert it properly.",
+    "gif": "10.gif",
+    "original": "media/image10.gif",
+    "size_mb": 29.6
+  },
+  {
+    "index": 11,
+    "text_before": "With all four non-yellow edge pieces inserted correctly, you should now have a solved second layer.",
+    "gif": "11.gif",
+    "original": "media/image11.gif",
+    "size_mb": 12.7
+  },
+  {
+    "index": 12,
+    "text_before": "Step 5: The Yellow Cross\nOnce the second layer is solved, the next step is to make a yellow cross by having all adjacent tiles to the center yellow tile also be yellow. If this is already the case for your cube, you may skip this step. Otherwise proceed with this step.\nThe only algorithm you need to know for this step is: F U R U\u2019 R\u2019 F\u2019. This algorithm will be referred to as the \u201cdog algorithm\u201d since it spells out the words FUR URF (like the fur of a dog, and its bark). The only extra consideration is what pattern the yellow tiles make on the top face and how you should orient it. If you have a yellow dot on the top face (no yellow edge tiles) just perform the dog algorithm normally.",
+    "gif": "12.gif",
+    "original": "media/image12.gif",
+    "size_mb": 19.7
+  },
+  {
+    "index": 13,
+    "text_before": "If you have a yellow bar on the top face (two yellow edge tiles on opposite ends), first make the bar point from left to right, then perform the dog algorithm: F U R U\u2019 R\u2019 F\u2019.",
+    "gif": "13.gif",
+    "original": "media/image13.gif",
+    "size_mb": 24.1
+  },
+  {
+    "index": 14,
+    "text_before": "If you have a yellow crescent (two yellow edge tiles perpendicular to each other), first make the yellow edge tiles point up and left, then perform the dog algorithm: F U R U\u2019 R\u2019 F\u2019.",
+    "gif": "14.gif",
+    "original": "media/image14.gif",
+    "size_mb": 24.5
+  },
+  {
+    "index": 15,
+    "text_before": "You should now have a yellow cross on the top face with all yellow edge tiles on top. The corners will be addressed in the next step.\nStep 6: Solving the Yellow Face\nJust like the previous step there is only one algorithm to use, with the only extra consideration being how you should orient the top layer, which is based on the pattern the yellow tiles form on the top face. The algorithm for this step is: R U R\u2019 U R U2 R\u2019. This algorithm will be referred to as the \u201cspinning algorithm\u201d as you end up spinning the up face a full 360\u00b0.\nIf you have no yellow corner tiles on the top face, making a cross pattern, move the top layer so that there is at least one yellow corner tile on the left face. Then, perform the spinning algorithm: R U R\u2019 U R U2 R\u2019.",
+    "gif": "15.gif",
+    "original": "media/image15.gif",
+    "size_mb": 17.0
+  },
+  {
+    "index": 16,
+    "text_before": "If you have two yellow corner tiles on the top face, they are either on the same side forming a tank pattern, or they are opposite of each other forming a figure-eight pattern. In both cases, move the top layer so that there is a yellow corner tile on the top-left of the front face.",
+    "gif": "16.gif",
+    "original": "media/image16.gif",
+    "size_mb": 14.8
+  },
+  {
+    "index": 17,
+    "text_before": "",
+    "gif": "17.gif",
+    "original": "media/image17.gif",
+    "size_mb": 21.0
+  },
+  {
+    "index": 18,
+    "text_before": "Finally, if you have only one yellow corner tile on the top face, resulting in a fish pattern, make the fish point down and left, and then perform the spinning algorithm: R U R\u2019 U R U2 R\u2019. If you end up with the fish again, just make it point down and right again and perform the spinning algorithm again. You should end up with a solved yellow face.",
+    "gif": "18.gif",
+    "original": "media/image18.gif",
+    "size_mb": 29.5
+  },
+  {
+    "index": 19,
+    "text_before": "Step 7: Solving the Third Layer Corner Pieces\nWith the yellow face solve, it is now time to correctly position the yellow corner pieces. The algorithm for this step is: R\u2019 F R\u2019 B2 R F\u2019 R\u2019 B2 R2. This algorithm will be referred to as the \u201cdouble-back algorithm\u201d as it involves rotating the back face twice, twice.\nFirst rotate the top layer until two corner pieces are in their proper position, indicated by their side tile\u2019s colors matching the corresponding side face color. If the correctly positioned yellow corner pieces are in opposite corners from each other on the top layer, just perform the double-back algorithm: R\u2019 F R\u2019 B2 R F\u2019 R\u2019 B2 R2.",
+    "gif": "19.gif",
+    "original": "media/image19.gif",
+    "size_mb": 34.6
+  },
+  {
+    "index": 20,
+    "text_before": "If you have two correctly positioned yellow corner pieces on the same side, reorient the cube so that the corner pieces are facing backwards. You can think of them as like taillights on a car. Then perform the double-back algorithm: R\u2019 F R\u2019 B2 R F\u2019 R\u2019 B2 R2. Afterwards, rotate the top layer to line up all the corner pieces so that they are all correctly positioned.",
+    "gif": "20.gif",
+    "original": "media/image20.gif",
+    "size_mb": 34.2
+  },
+  {
+    "index": 21,
+    "text_before": "Step 8: Solving the Third Layer Edge Pieces (and the Cube!)\nThe last step is to now correctly position the third layer edge pieces. The algorithm for this step is: F2 U L R\u2019 F2 L\u2019 R U F2. This algorithm will be referred to as the \u201cfront flipper algorithm\u201d as you flip the front face thrice.\nIf all yellow edge pieces are not positioned correctly, and thus you have no solved side face, just perform the front flipper algorithm: F2 U L R\u2019 F2 L\u2019 R U F2.",
+    "gif": "21.gif",
+    "original": "media/image21.gif",
+    "size_mb": 33.8
+  },
+  {
+    "index": 22,
+    "text_before": "If you have a solved side face, move it to the back and perform the front flipper algorithm: F2 U L R\u2019 F2 L\u2019 R U F2. If the cube isn\u2019t solved, just perform the algorithm again.",
+    "gif": "22.gif",
+    "original": "media/image22.gif",
+    "size_mb": 28.7
+  },
+  {
+    "index": 23,
+    "text_before": "",
+    "gif": "23.gif",
+    "original": "media/image23.gif",
+    "size_mb": 23.0
+  },
+  {
+    "index": 24,
+    "text_before": "Congratulations, you should now have a solved 3x3x3 Rubik\u2019s cube!",
+    "gif": "24.gif",
+    "original": "media/image24.gif",
+    "size_mb": 11.4
+  }
+]
